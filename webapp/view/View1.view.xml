@@ -1,0 +1,37 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="ats.mm.product.controller.View1">
+    <Page title="{i18n>view1Title}">
+        <content>
+            <SearchField id="idSearch" search="onSearch"></SearchField>
+            <List id="idList" items="{/ProductSet}" mode="SingleSelectMaster" delete="onDelete" 
+                  growing="true" growingThreshold="10"
+                  selectionChange="onItemPress">
+                <items>
+                     <!-- To show a business object data create object list item -->
+                    <ObjectListItem title="{PRODUCT_ID}" intro="{NAME}" icon="sap-icon//product"
+                                    number="{PRICE}" numberUnit="{CURRENCY_CODE}"
+                    >
+                        <attributes>
+                            <ObjectAttribute title="Type" text="{CATEGORY}"></ObjectAttribute>
+                        </attributes>
+                        <firstStatus>
+                            <ObjectStatus text="{path: 'availability',
+                                                 formatter: '.formatter.getStatus'}"
+                                                 
+                                          state="{path: 'availability',
+                                                 formatter: '.formatter.getStatusColor'}">             </ObjectStatus>
+                        </firstStatus>
+                    </ObjectListItem>
+                </items>
+            </List>
+        </content>
+        <headerContent>
+            <Button icon="sap-icon://action" press="onNext" />
+        </headerContent>
+        <footer>
+            <Toolbar >
+                <ToolbarSpacer ></ToolbarSpacer>
+                <Button icon="sap-icon://add" tooltip="Manage Product" press="onAdd"></Button>
+            </Toolbar>
+        </footer>
+    </Page>
+</mvc:View>

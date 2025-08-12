@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <!-- a namespace is always unique for your application -->
+        <script src="https://ui5.sap.com/1.135.0/resources/sap-ui-core.js"
+                data-sap-ui-libs="sap.m"
+                data-sap-ui-theme="sap_fiori_3_dark"
+                data-sap-ui-resourceroots='{
+                    "ats.mm.product":   "./"
+                }'
+                data-sap-ui-bindingSyntax="complex"
+        ></script>
+        <script>
+
+            //create a new component
+            var oComponent = new sap.ui.core.ComponentContainer({
+                name: "ats.mm.product",
+            });
+            
+            oComponent.placeAt("content");
+
+        </script>
+    </head>
+    <body class="sapUiBody">
+        <div id="content"></div>
+    </body>
+</html>
