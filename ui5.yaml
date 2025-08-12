@@ -10,4 +10,4 @@ server:
         backend:
         - path: /sap
           url: http://stsrvr.mynetgear.com:8021
-          destination: S4H
+          destination: S4FIORI
