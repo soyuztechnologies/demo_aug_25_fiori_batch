@@ -4,11 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "npm run build && fiori deploy --config ui5-deploy.yaml && rimraf archive.zip",
+    "undeploy": "npm run build && fiori undeploy --config ui5-deploy.yaml",
+    "deploy-test": "npm run build && fiori deploy --config ui5-deploy.yaml --testMode true"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@sap/ux-ui5-tooling": "^1.18.4"
+  },
+  "devDependencies": {
+    "rimraf": "^5.0.5"
   }
 }
